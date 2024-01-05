@@ -7,7 +7,7 @@ import { FaInstagram } from '@react-icons/all-files/fa/FaInstagram';
 const Footer = () => {
     return (
         <>
-            <div className="py-20 lg:p-20 bg-amber-500">
+            <div className="py-20 lg:p-20 mt-28 lg:mt-40 bg-amber-500">
                 <div className='flex flex-col lg:flex-row items-center justify-between w-full lg:w-10/12 mx-auto'>
                     <div className='flex flex-col gap-20 w-11/12 lg:w-3/5'>
                         <div className='flex items-center w-full lg:w-10/12 relative'>
