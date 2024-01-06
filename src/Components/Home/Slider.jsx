@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { MdKeyboardArrowLeft } from "@react-icons/all-files/md/MdKeyboardArrowLeft";
 import { MdKeyboardArrowRight } from "@react-icons/all-files/md/MdKeyboardArrowRight";
 import AddItemModal from './AddItemModal';
 import { useForm } from 'react-hook-form';
+import { DataContext } from '../../Contexts/DataProvider';
+import Swal from 'sweetalert2';
 
 /* eslint-disable react/prop-types */
-const Slider = ({ showPrevItems, showNextItems, canShowPrev, canShowNext, filteredData }) => {
+const Slider = ({ showPrevItems, showNextItems, canShowPrev, canShowNext }) => {
     const [showModal, setShowModal] = useState(false);
     const { register, handleSubmit, reset } = useForm();
+    const { addNewItem } = useContext(DataContext);
 
     const openModal = () => {
         setShowModal(true);
@@ -18,8 +21,13 @@ const Slider = ({ showPrevItems, showNextItems, canShowPrev, canShowNext, filter
     };
 
     const onSubmit = async (data) => {
-        console.log(data);
-        console.log(filteredData);
+        addNewItem(data);
+        Swal.fire({
+            icon: "success",
+            title: "Item Added",
+            showConfirmButton: false,
+            timer: 1000
+        });
         reset();
         closeModal()
     }
@@ -46,12 +54,12 @@ const Slider = ({ showPrevItems, showNextItems, canShowPrev, canShowNext, filter
                 </button>
             </div>
 
-            <AddItemModal 
-            showModal={showModal} 
-            closeModal={closeModal} 
-            onSubmit={onSubmit}
-            register={register}
-            handleSubmit={handleSubmit} />
+            <AddItemModal
+                showModal={showModal}
+                closeModal={closeModal}
+                onSubmit={onSubmit}
+                register={register}
+                handleSubmit={handleSubmit} />
         </>
     );
 };

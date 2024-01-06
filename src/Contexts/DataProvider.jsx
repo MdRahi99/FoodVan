@@ -25,7 +25,11 @@ const DataProvider = ({ children }) => {
         fetchData();
     }, []);
 
-    const value = { data, loading, error };
+    const addNewItem = (newItem) => {
+        setData((prevData) => [...prevData, newItem]);
+      };
+
+    const value = { data, loading, error, addNewItem };
 
     return <DataContext.Provider value={value}>
         {children}
