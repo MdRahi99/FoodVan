@@ -13,8 +13,8 @@ const DataProvider = ({ children }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10');
-                setData(response.data.Items);
+                const response = await axios.get('https://food-van-server.vercel.app/api/items');
+                setData(response.data);
             } catch (error) {
                 setError(error);
             } finally {
