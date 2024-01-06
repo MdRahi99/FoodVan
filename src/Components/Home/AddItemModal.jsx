@@ -51,12 +51,13 @@ const AddItemModal = ({ showModal, closeModal, register, handleSubmit, onSubmit 
                   />
                 </div>
   
-                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div className="flex flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <h1 className="font-semibold text-lg mb-1">Is Popular</h1>
                       <input
                         type="checkbox"
                         name="IsPopular"
+                        defaultChecked={true}
                         className="toggle toggle-sm toggle-info"
                         {...register("IsPopular")}
                       />
@@ -67,6 +68,7 @@ const AddItemModal = ({ showModal, closeModal, register, handleSubmit, onSubmit 
                       <input
                         type="checkbox"
                         name="IsRecommended"
+                        defaultChecked={true}
                         className="toggle toggle-sm toggle-info"
                         {...register("IsRecommended")}
                       />
