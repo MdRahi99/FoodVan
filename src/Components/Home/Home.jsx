@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import Popular from "./Popular";
 import Recommended from "./Recommended";
 import axios from 'axios';
+import Loader from '../Shared/Loader';
 
 const Home = () => {
 
@@ -33,7 +34,7 @@ const Home = () => {
     });
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <Loader />;
     }
 
     if (error) {

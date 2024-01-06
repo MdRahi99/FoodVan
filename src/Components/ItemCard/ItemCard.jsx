@@ -1,6 +1,5 @@
 const ItemCard = (items) => {
 
-    console.log(items);
     const {ImageUrl ,Name} = items.items;
 
     return (

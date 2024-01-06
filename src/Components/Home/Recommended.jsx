@@ -31,7 +31,11 @@ const Recommended = ({ filterRecommendedData, title }) => {
                 <div className="flex gap-3 justify-between items-center mb-3">
                     <h1 className="text-lg font-medium">{title}</h1>
 
-                    <Slider showPrevItems={showPrevItems} showNextItems={showNextItems} canShowPrev={canShowPrev} canShowNext={canShowNext} />
+                    <Slider 
+                    showPrevItems={showPrevItems} showNextItems={showNextItems} 
+                    canShowPrev={canShowPrev} 
+                    canShowNext={canShowNext}
+                    filteredData={filterRecommendedData} />
                 </div>
                 <div
                     className="grid grid-cols-3 lg:grid-cols-5 gap-3"
