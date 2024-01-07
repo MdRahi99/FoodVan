@@ -6,6 +6,7 @@ import Details from "../Components/Details/Details";
 import Category from "../Components/Category/Category";
 import Favorites from "../Components/Favorites/Favorites";
 import Profile from "../Components/Profile/Profile";
+import Error from "../Components/Shared/Error";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path: '*',
+      element: <Error />
+    }
   ]);
 
 export default router;
