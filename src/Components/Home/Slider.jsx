@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 /* eslint-disable react/prop-types */
 const Slider = ({ showPrevItems, showNextItems, canShowPrev, canShowNext }) => {
     const [showModal, setShowModal] = useState(false);
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { addNewItem } = useContext(DataContext);
 
     const openModal = () => {
@@ -59,7 +59,8 @@ const Slider = ({ showPrevItems, showNextItems, canShowPrev, canShowNext }) => {
                 closeModal={closeModal}
                 onSubmit={onSubmit}
                 register={register}
-                handleSubmit={handleSubmit} />
+                handleSubmit={handleSubmit}
+                errors={errors} />
         </>
     );
 };
